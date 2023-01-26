@@ -22,7 +22,27 @@ static ThemeData lightTheme=ThemeData(
       fontSize: 22,
       fontWeight: FontWeight.bold,
       color: whiteColor,
-    )
+    ),
+      headline2: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: blackColor,
+      ),
+      subtitle1: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: blackColor,
+      ),
+      subtitle2 : TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
+        color: blackColor,
+      ),
+      bodyText1: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: primaryLightColor,
+  )
 
   ),
 scaffoldBackgroundColor: backGroundColorLight,
