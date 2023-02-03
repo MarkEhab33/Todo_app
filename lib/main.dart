@@ -1,8 +1,13 @@
+
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_app/Home/HomeScreen.dart';
 import 'package:todo_app/MyTheme.dart';
+import 'package:todo_app/edit/edit_task.dart';
+import 'package:todo_app/provider/ListProvider.dart';
 
 
 Future<void> main() async {
@@ -10,7 +15,10 @@ Future<void> main() async {
   await Firebase.initializeApp();
   await FirebaseFirestore.instance.disableNetwork();
 
-  runApp(const MyApp());
+  runApp(
+      ChangeNotifierProvider(
+    create: (context)=> ListProvider( ),
+      child:  MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -23,6 +31,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes:{
         HomeScreen.routeName :(context)=> HomeScreen(),
+        EditTaskScreen.routeName:(context)=>EditTaskScreen(),
       } ,
       initialRoute: HomeScreen.routeName ,
       theme: MyTheme.lightTheme  ,
